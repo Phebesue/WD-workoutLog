@@ -7,22 +7,22 @@ Endpoint | Verb | Description
 -------- | ---- | -----------
 
 **1.** /user/register |	POST | Allows a new user to be created with a username and password.
-![](images/logRegister.jpg)
+<img src= "images/logRegister.jpg" width = 80%>
 
 **2.** /user/login |POST |Allows log in with an existing user.
-![](images/logUserLogin.jpg)
+<img src= "images/logUserLogin.jpg" width = 80%>
 
 **3.** /log/ | POST |	Allows users to create a workout log with descriptions, definitions, results, and owner properties.
-![](images/logCreate.jpg)
+<img src= "images/logCreate.jpg" width = 80%>
 
 **4.** /log/ | GET |	Gets all logs for an individual user.
-![](images/getMyLogEntries.jpg)
+<img src= "images/getMyLogEntries.jpg" width = 80%>
 
 **5.** /log/:id	| GET |	Gets individual logs by id for an individual user.
-![](images/getLogsByUserId.jpg)
+<img src= "images/getLogsByUserId.jpg" width = 80%>
 
 **6.** /log/:id |	PUT |	Allows individual logs to be updated by a user.
-![](images/putLogByLogId.jpg)
+<img src= "images/putLogByLogId.jpg" width = 80%>
 
 **7.** /log/:id |	DELETE |	Allows individual logs to be deleted by a user.
-![](images/DelLogByLogId.jpg)
+<img src= "images/DelLogByLogId.jpg" width = 80%>
