@@ -8,7 +8,7 @@ let Log = require("../db").import("../models/log");
 // });
 
 // -----  Log Create  -----
-router.post("/create", validateSession, (req, res) => {
+router.post("/", validateSession, (req, res) => {
   const logEntry = {
     description: req.body.log.description,
     definition: req.body.log.define,
@@ -62,7 +62,7 @@ router.put("/:entryId", validateSession, (req, res) => {
 });
 
 // -----  Delete a Journal Entry  -----
-router.delete("/delete/:id", validateSession, function (req, res) {
+router.delete("/:id", validateSession, function (req, res) {
   const query = { where: { id: req.params.id, owner_id: req.user.id } };
   Log.destroy(query)
     .then(() => res.status(200).json({ message: "Log Entry Removed" }))
