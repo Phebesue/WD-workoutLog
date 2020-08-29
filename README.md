@@ -13,7 +13,7 @@ Endpoint | Verb | Description
 <img src= "images/logUserLogin.jpg" width = 80%>
 
 #### 3. /log/ | POST |	Allows users to create a workout log with descriptions, definitions, results, and owner properties.
-<img src= "images/logCreate.jpg" width = 80%>
+<img src= "images/logCreate2.jpg" width = 80%>
 
 #### 4. /log/ | GET |	Gets all logs for an individual user.
 <img src= "images/getMyLogEntries.jpg" width = 80%>
@@ -25,4 +25,4 @@ Endpoint | Verb | Description
 <img src= "images/putLogByLogId.jpg" width = 80%>
 
 #### 7. /log/:id |	DELETE |	Allows individual logs to be deleted by a user.
-<img src= "images/DelLogByLogId.jpg" width = 80%>
+<img src= "images/DelLogByLogId2.jpg" width = 80%>
