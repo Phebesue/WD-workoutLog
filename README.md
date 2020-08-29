@@ -26,3 +26,6 @@ Endpoint | Verb | Description
 
 #### 7. /log/:id |	DELETE |	Allows individual logs to be deleted by a user.
 <img src= "images/DelLogByLogId2.jpg" width = 80%>
+
+#### 8. /log/all |	GET |	Gets all logs. Demonstrating additional endpoint and that must have a token to access.
+<img src= "images/getAllLogs-NotAuth.jpg" width = 80%>
