@@ -5,6 +5,10 @@ const User = require("../db").import("../models/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+// Endpoints
+// POST:  http://localhost:3005/user/register
+// POST:  http://localhost:3005/user/login
+
 
 // -----  User Sign-Up  -----
 router.post("/register", function (req, res) {
@@ -46,7 +50,7 @@ router.post("/login", function (req, res) {
         let token = jwt.sign({id:user.id}, process.env.JWT_SECRET,{expiresIn:"1d"})
         res.status(200).json({
           user: user,
-          message: "Sucessfully authenticated  user",
+          message: "Successfully authenticated  user",
           sessionToken: token
         })
       } else {

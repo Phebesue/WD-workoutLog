@@ -7,6 +7,14 @@ let Log = require("../db").import("../models/log");
 //   res.send("Hey!! This is a log route!");
 // });
 
+// Endpoints
+// POST:  http://localhost:3005/log
+// GET:   http://localhost:3005/log/
+// GET:   http://localhost:3005/log/19
+// GET:   http://localhost:3005/log/all
+// PUT:   http://localhost:3005/log/8
+// DEL:   http://localhost:3005/log/12
+
 // -----  Log Create  -----
 router.post("/", validateSession, (req, res) => {
   const logEntry = {
@@ -19,7 +27,7 @@ router.post("/", validateSession, (req, res) => {
     res
       .status(200)
       .json({
-        message: "Sucessfully submitted a log entry",
+        message: "Successfully submitted a log entry",
         logEntry: log,
       })
       .catch((err) => res.status(501).json({ error: err }))

@@ -7,7 +7,7 @@ const sequelize = new Sequelize("workoutLog", "postgres", process.env.PASS, {
 
 sequelize
   .authenticate()
-  .then(() => console.log("workLog db is connected"))
+  .then(() => console.log("workoutLog db is connected"))
   .catch((err) => console.log(err));
 
   module.exports = sequelize;
