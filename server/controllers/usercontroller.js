@@ -2,12 +2,14 @@
 const router = require("express").Router();
 const User = require("../db").import("../models/user");
 
+const validateSession = require("../middleware/validate-session");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 // Endpoints
 // POST:  http://localhost:3005/user/register
 // POST:  http://localhost:3005/user/login
+// GET :  http://localhost:3005/user
 
 
 // -----  User Sign-Up  -----
@@ -59,7 +61,7 @@ router.post("/login", function (req, res) {
       }
     });
   }
-  else{ res.status(500).json({error: err})
+  else{ res.status(501).json({error: err})
 
   }
 })
@@ -67,4 +69,23 @@ router.post("/login", function (req, res) {
     );
 }
     );
+
+    // -----  Get User  -----
+    // ValidateSession on this prevents it from working at all.
+    router.get("/",/* validateSession,*/(req, res) => {
+      User.findOne({
+        where: {
+          id: req.user.id
+        },
+        include: "userInfo"
+        // This doesn't work server gets caught in some loop
+        // include: ["userInfo", "logs"]
+      })
+      .then(info => 
+        res.status(200).json({
+          message: "User found",
+          info: info
+        }))
+      .catch(err => res.status(500).json("User not found", err))
+    })
 module.exports = router;
