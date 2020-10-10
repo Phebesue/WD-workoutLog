@@ -22,6 +22,7 @@ router.post("/", validateSession, (req, res) => {
     definition: req.body.log.define,
     result: req.body.log.result,
     owner_id: req.user.id,
+    userId:req.user.id,
   };
   Log.create(logEntry).then((log) =>
     res
@@ -30,7 +31,7 @@ router.post("/", validateSession, (req, res) => {
         message: "Successfully submitted a log entry",
         logEntry: log,
       })
-      .catch((err) => res.status(501).json({ error: err }))
+      .catch((err) => res.status(500).json({ error: err }))
   );
 });
 // -----  Get Entries for user by Id  -----
